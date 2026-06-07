@@ -1,0 +1,115 @@
+body {
+    background-color: #333;
+    text-align: center;
+    padding-top: 50px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 30px;
+    color:white;
+
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 75px;
+    color:white;
+}
+
+a {
+    color:rgb(255, 251, 0);
+
+}
+
+a:hover{
+    color: black;
+    font-size: 70px;
+}
+
+/* Auth forms */
+.auth-container {
+    display: inline-block;
+    background-color: #444;
+    padding: 40px 60px;
+    border-radius: 8px;
+    margin-top: 20px;
+    min-width: 380px;
+    text-align: left;
+}
+
+.auth-container h2 {
+    font-size: 45px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.auth-container label {
+    display: block;
+    font-size: 22px;
+    margin-top: 16px;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #555;
+    color: white;
+    border: 1px solid #888;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+.btn-row {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 30px;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #666;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #888;
+    font-size: 24px;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: rgb(255, 251, 0);
+    border: 2px solid rgb(255, 251, 0);
+}
+
+.btn-secondary:hover {
+    background-color: rgb(255, 251, 0);
+    color: #333;
+    font-size: 24px;
+}
+
+.error-msg {
+    color: #ff6b6b;
+    font-size: 22px;
+    margin-top: 8px;
+}
