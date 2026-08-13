@@ -1,115 +1,198 @@
-body {
-    background-color: #333;
-    text-align: center;
-    padding-top: 50px;
-    font-family:'Times New Roman', Times, serif;
-    font-size: 30px;
-    color:white;
+/* Palette and type borrowed from pugbug.dev */
+:root {
+    --paper:      #0F1622;
+    --paper-deep: #1A2433;
+    --ink:        #F3F3F4;
+    --ink-soft:   #94A6BC;
+    --hairline:   #2B3A4D;
+    --fawn:       #D9C5B2;
+    --pine:       #3DA5E8;
+    --alert:      #E8756B;
 
+    --display: "EB Garamond", Georgia, serif;
+    --body:    "IBM Plex Sans", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0 1.5rem 5rem;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--display);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.wrap {
+    max-width: 30rem;
+    margin: 0 auto;
+    padding-top: 5rem;
+}
+
+/* --- masthead --- */
+
+.eyebrow {
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fawn);
+    margin: 0 0 0.25rem;
 }
 
 h1 {
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    font-size: 75px;
-    color:white;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    line-height: 1.05;
+    margin: 0 0 2rem;
 }
 
 a {
-    color:rgb(255, 251, 0);
-
+    color: var(--pine);
+    text-underline-offset: 0.2em;
 }
 
-a:hover{
-    color: black;
-    font-size: 70px;
+a:hover {
+    text-decoration: underline;
 }
 
-/* Auth forms */
+/* --- panels --- */
+
+.panel,
 .auth-container {
-    display: inline-block;
-    background-color: #444;
-    padding: 40px 60px;
-    border-radius: 8px;
-    margin-top: 20px;
-    min-width: 380px;
+    border: 1px solid var(--hairline);
+    background: var(--paper-deep);
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
     text-align: left;
 }
 
+.panel h2,
 .auth-container h2 {
-    font-size: 45px;
-    margin-bottom: 10px;
-    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 1.25rem;
 }
 
-.auth-container label {
+.panel p {
+    font-size: 1.05rem;
+    margin: 0 0 1rem;
+}
+
+/* --- status list (index page) --- */
+
+.meta {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 0.5rem 1.25rem;
+    margin: 0 0 1.5rem;
+    font-size: 1rem;
+}
+
+.meta dt {
+    color: var(--fawn);
+    white-space: nowrap;
+}
+
+.meta dd {
+    margin: 0;
+    color: var(--ink);
+}
+
+/* --- forms --- */
+
+label {
     display: block;
-    font-size: 22px;
-    margin-top: 16px;
-    margin-bottom: 6px;
+    font-family: var(--body);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fawn);
+    margin: 1rem 0 0.35rem;
 }
 
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    padding: 10px 14px;
-    font-size: 22px;
-    font-family: 'Times New Roman', Times, serif;
-    background-color: #555;
-    color: white;
-    border: 1px solid #888;
-    border-radius: 4px;
-    box-sizing: border-box;
+    padding: 0.6rem 0.75rem;
+    font-family: var(--body);
+    font-size: 1rem;
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--hairline);
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
     outline: none;
-    border-color: #fff;
+    border-color: var(--pine);
 }
 
+/* --- buttons --- */
+
 .btn-row {
-    margin-top: 24px;
+    margin-top: 1.5rem;
     display: flex;
-    gap: 12px;
-    justify-content: center;
+    gap: 0.75rem;
 }
 
 .btn {
-    padding: 12px 30px;
-    font-size: 24px;
-    font-family: 'Times New Roman', Times, serif;
+    padding: 0.6rem 1.4rem;
+    font-family: var(--body);
+    font-size: 0.95rem;
+    font-weight: 500;
     cursor: pointer;
-    border-radius: 4px;
     text-decoration: none;
     display: inline-block;
-}
-
-.btn-primary {
-    background-color: #666;
-    color: white;
     border: none;
 }
 
+.btn-primary {
+    background: var(--pine);
+    color: var(--paper);
+}
+
 .btn-primary:hover {
-    background-color: #888;
-    font-size: 24px;
+    background: #5FB6ED;
+    text-decoration: none;
 }
 
 .btn-secondary {
-    background-color: transparent;
-    color: rgb(255, 251, 0);
-    border: 2px solid rgb(255, 251, 0);
+    background: transparent;
+    color: var(--ink-soft);
+    border: 1px solid var(--hairline);
 }
 
 .btn-secondary:hover {
-    background-color: rgb(255, 251, 0);
-    color: #333;
-    font-size: 24px;
+    color: var(--pine);
+    border-color: var(--pine);
+    text-decoration: none;
 }
 
+.btn-wake {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.setup-note {
+    font-family: var(--body);
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    margin: 0 0 1rem;
+}
+
+/* --- messages --- */
+
 .error-msg {
-    color: #ff6b6b;
-    font-size: 22px;
-    margin-top: 8px;
+    color: var(--alert);
+    font-family: var(--body);
+    font-size: 0.9rem;
+    margin: 0.25rem 0 0;
 }

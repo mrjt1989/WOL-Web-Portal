@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}First-Run Setup{% endblock %}
+{% block content %}
+<div class="auth-container">
+    <h2>Create Admin Account</h2>
+    <p class="setup-note">Welcome! No account exists yet. Create the account you will use to log in. This page disappears once the account is created.</p>
+    {% if error %}
+    <p class="error-msg">{{ error }}</p>
+    {% endif %}
+    <form method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required autofocus>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        <label for="confirm">Confirm Password</label>
+        <input type="password" id="confirm" name="confirm" required>
+        <div class="btn-row">
+            <button type="submit" class="btn btn-primary">Create Account</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Home Gateway{% endblock %}
+{% block content %}
+<div class="panel">
+    <h2>Workbench</h2>
+    <dl class="meta">
+        <dt>User</dt>
+        <dd>{{ user }}</dd>
+        <dt>Target</dt>
+        <dd>Taylor PC</dd>
+    </dl>
+    <form action="{{ url_for('wake_device') }}" method="POST">
+        <button type="submit" class="btn btn-primary btn-wake">Send Wake-on-LAN Packet</button>
+    </form>
+</div>
+<p><a href="{{ url_for('logout') }}">Logout</a></p>
+{% endblock %}
